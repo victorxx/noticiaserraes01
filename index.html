@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Notícias - Vitória e Vila Velha</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- Meta Tags SEO -->
+  <meta name="description" content="Acompanhe as últimas notícias das prefeituras de Vitória e Vila Velha, com foco em editais, obras e serviços públicos.">
+  <meta name="keywords" content="Vitória, Vila Velha, notícias, prefeitura, edital, saúde, obras, capacitação">
+  <meta name="author" content="Portal Cidades ES">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Últimas notícias de Serra es">
+  <meta property="og:description" content="Confira as principais atualizações das prefeituras capixabas.">
+  <meta property="og:image" content="https://example.com/imagens/capa-noticias.jpg">
+  
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Últimas notícias de SERRA ES">
+  <meta name="twitter:description" content="Informações atualizadas das prefeituras capixabas.">
+  <meta name="twitter:image" content="https://example.com/imagens/capa-noticias.jpg">
+
+  <!-- Estilo otimizado -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: green;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: white;
+      font-size: 28px;
+    }
+
+    ul#noticias-lista {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul#noticias-lista li {
+      background-color: #ffffff;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    ul#noticias-lista li a {
+      color: #005BAC;
+      text-decoration: none;
+    }
+
+    ul#noticias-lista li a:hover {
+      text-decoration: underline;
+    }
+
+    #unique-id {
+      font-family: 'Courier New', Courier, monospace;
+      background: #eee;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    /* Propaganda piscante */
+    .propaganda {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #FF0000;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+      animation: piscar 1s infinite;
+      z-index: 999;
+    }
+
+    @keyframes piscar {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    @media (max-width: 600px) {
+      .propaganda {
+        font-size: 12px;
+        padding: 10px;
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Notícias das Prefeituras da serra es</h1>
+  <ul id="noticias-lista"></ul>
+
+  <p><strong>ID de Verificação Único:</strong> <span id="unique-id"></span></p>
+
+  <!-- Propaganda piscante -->
+  <div class="propaganda">🔥<a href="https://victorxx.github.io/redirecionae00/"> CONFERIR NÃO PERCA ESSA OPORTUNIDADE!</a>🔥</div>
+
+  <script>
+    // Array de notícias (Vitória e Vila Velha)
+    const noticias = [
+ {
+    cidade: "Serra",
+    titulo: "Serra já investiu R$ 113,7 milhões na revitalização de ruas dos bairros",
+    data: "2025-05-10",
+    link: "https://www.serra.es.gov.br/noticias/serra-ja-investiu-r-1137-milhoes-na-revitalizacao-de-ruas-dos-bairros"
+  },
+  {
+    cidade: "Serra",
+    titulo: "Prefeitura da Serra abre consulta pública para Lei de Diretrizes Orçamentárias 2026",
+    data: "2025-03-19",
+    link: "https://www.serra.es.gov.br/noticias/prefeitura-da-serra-abre-consulta-publica-para-lei-de-diretrizes-orcamentarias-2026"
+  },
+  {
+    cidade: "Serra",
+    titulo: "IPTU 2025: conheça os canais exclusivos para esclarecimento de dúvidas",
+    data: "2025-04-02",
+    link: "https://www.serra.es.gov.br/noticias/iptu-2025-serra-disponibiliza-canais-exclusivos-para-esclarecimento-de-duvidas"
+  },
+  {
+    cidade: "Serra",
+    titulo: "Serra conclui nomeação dos 895 aprovados em concurso da educação",
+    data: "2025-06-11",
+    link: "https://serranoticiario.com.br/prefeitura-da-serra-finaliza-nomeacao-de-895-professores-aprovados-em-concurso-da-educacao/"
+  }
+    ];
+
+    // Renderiza as notícias na página
+    const ul = document.getElementById("noticias-lista");
+    noticias.forEach(noticia => {
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${noticia.cidade}</strong>: <a href="${noticia.link}" target="_blank">${noticia.titulo}</a> - <em>${noticia.data}</em>`;
+      ul.appendChild(li);
+    });
+
+    // Função para gerar um ID único com letras, números e caracteres especiais
+    function gerarIDUnico(tamanho = 16) {
+      const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+=[]{}";
+      let id = "";
+      for (let i = 0; i < tamanho; i++) {
+        id += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+      }
+      return id;
+    }
+
+    // Inserir o ID no HTML
+    document.getElementById("unique-id").textContent = gerarIDUnico(16);
+  </script>
+</body>
+</html>
